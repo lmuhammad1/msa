@@ -12,7 +12,6 @@ set :user, 'deployer'
 set :rails_env, "production"
 
 set :keep_releases, 3
-server "www.muslimstudyabroad.com", :app, :web, :db, :primary => true
 
 
 # Default branch is :master
