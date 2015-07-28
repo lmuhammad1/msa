@@ -5,6 +5,16 @@ set :application, 'muslimstudyabroad.com'
 set :repo_url, 'git@github.com:lmuhammad1/msa.git'
 set :rbenv_ruby, '2.2.2'
 
+set :deploy_to, '/var/www/muslimstudyabroad.com'
+set :scm, :git
+set :branch, "master"
+set :user, 'deployer'
+set :rails_env, "production"
+
+set :keep_releases, 3
+server "www.muslimstudyabroad.com", :app, :web, :db, :primary => true
+
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
@@ -21,7 +31,7 @@ set :rbenv_ruby, '2.2.2'
 # set :log_level, :debug
 
 # Default value for :pty is false
-# set :pty, true
+set :pty, true
 
 # Default value for :linked_files is []
 # set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
