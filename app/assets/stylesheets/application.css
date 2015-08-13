@@ -13,6 +13,29 @@
  *= require_tree .
  *= require_self
  */
-body {
-  background-color: #b0c4de;
+
+nav ul { 
+  list-style-type: none; 
+  padding: 0; 
+  margin: 25px 0 0; 
+}
+nav li { 
+  border: 1px solid #666; 
+  background-color: #eee; 
+  padding: 10px 1em;
+  margin: 3px 0 0;
+  text-align: center;
+}
+nav li a {
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+@media only screen and (min-width: 50em) {
+  nav li { 
+    display: block;
+    float: left;
+    width: 15%;
+  }
+  nav:after { content: ""; display: table; clear: both; }
 }
