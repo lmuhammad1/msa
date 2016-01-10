@@ -15,3 +15,16 @@
 //= require turbolinks
 //= require_tree .
 
+$(document).ready(function() {
+    $('.nav-btn').click(function() {
+      $('ul.navi').toggle();
+    })
+
+
+
+    if ($(window).width() > 600) {
+    	$(".navi").css("display", "block");
+    }
+
+
+    })
