@@ -52,6 +52,10 @@ namespace :deploy do
       # within release_path do
       #   execute :rake, 'cache:clear'
       # end
+      cap apache:stop
+      cap apache:start
+      cap apache:restart
+      cap apache:reload
     end
   end
 
