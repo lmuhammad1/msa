@@ -46,16 +46,17 @@ set :pty, true
 
 namespace :deploy do
 
+	desc "Restart Passenger app"
+task :restart do
+    run "#{ try_sudo } touch #{ File.join(current_path, 'tmp', 'restart.txt') }"
+end
+
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
       # within release_path do
       #   execute :rake, 'cache:clear'
       # end
-      cap apache:stop
-      cap apache:start
-      cap apache:restart
-      cap apache:reload
     end
   end
 
